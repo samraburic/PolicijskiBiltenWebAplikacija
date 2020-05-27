@@ -1,0 +1,66 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout-Admin.cshtml";
+}
+@using Bilten.Web.Areas.AdministratorModul.ViewModels.Korisnici;
+@model KorisniciUrediVM
+
+<div>
+    <h2 style="display:inline-block">Detalji o korisniku <b>"@Model.username"</b></h2><a href="/AdministratorModul/Korisnici/UrediKorisnika?=@Model.KorisnikId" class="btn btn-warning" style="float:right; margin-right:30px;">Uredi profil</a>
+    <a href="/AdministratorModul/Korisnici" class="btn btn-primary" style="float:right;margin-right:20px"><i class="fa fa-backward"></i></a>
+    
+    <hr />
+</div>
+
+<form style="width:50%;">
+    <label>Ime i prezime:</label>
+    <input type="text" class="form-control" value="@Model.ImePrezime" readonly />
+    <br />
+
+    <label>JMBG:</label>
+    <input type="text" class="form-control" value="@Model.JMBG" readonly />
+    <br />
+
+    <label>E-mail:</label>
+    <input type="text" class="form-control" value="@Model.email" readonly />
+    <br />
+
+    <label>Vrsta zaposlenika:</label>
+    <input type="text" class="form-control" value="@Model.vrstaZaposlenika" readonly />
+    <br />
+
+    <div id="lozinka1">
+        <label>Password:</label>
+        <input type="password" class="form-control" value="@Model.password" readonly />
+    </div>
+
+
+    <a class="showpassword"></a>
+
+
+    <div id="lozinka" style="display:none">
+
+        <label>Password:</label>
+        <input type="text" class="form-control" value="@Model.password" readonly />
+    </div>
+    <br />
+    <a id="btn"><i class=" fa fa-fw fa-eye text-secondary text-secondary"></i></a>
+    <br />
+
+</form>
+<br /><br />
+<hr />
+
+<script>
+    //$(".showpassword").click(function (event) {
+    //    $("#pokaziPass").html(event);
+    //});
+
+    $(document).ready(function () {
+        $("#btn").click(function () {
+            $("#lozinka1").toggle();
+            $("#lozinka").toggle();
+        });
+    });
+</script>

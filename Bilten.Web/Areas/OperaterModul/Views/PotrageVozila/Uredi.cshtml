@@ -1,0 +1,48 @@
+﻿@{
+    ViewData["Title"] = "Detalji";
+    Layout = "~/Views/Shared/_Layout-Saobracaj.cshtml";
+}
+@using Bilten.Web.Areas.OperaterModul.ViewModels.PotrageVozila;
+@model PotrageVozilaUrediVM
+<br />
+
+<h3>Uređivanje potrage</h3>
+<hr />
+<form action="/OperaterModul/PotrageVozila/SnimiPromjene" style="width:70%">
+    <input type="text" name="potragaId" value="@Model.Id" hidden/>
+
+        <label><b>Prijavitelj:</b></label>
+        <input type="text" class="form-control" name="prijavitelj" value="@Model.Prijavitelj"/>
+        <br />
+
+        <label><b>Odaberi vozilo:</b></label>
+        <select name="voziloId" class="form-control">
+            <option value="@Model.VoziloId">@Model.Vozilo</option>
+            @foreach (var x in Model.vozila)
+            {
+                <option value="@x.Value">@x.Text</option>
+            }
+        </select>
+        <br />
+
+
+        <label><b>Lokacija:</b></label>
+        <input type="text" class="form-control" name="lokacija" value="@Model.Lokacija"/>
+        <br />
+
+        <label><b>Datum prijave:</b></label>
+        <input type="text" class="form-control" name="datumprijave" value="@Model.DatumPrijave"/>
+        <br />
+
+        <label><b>Opis:</b></label>
+        <input type="text" class="form-control" name="opis" value="@Model.Opis"/>
+        <br />
+        <hr />
+
+    </form>
+
+<br />
+<hr />
+<a href="/OperaterModul/PotrageVozila/Index"><< vrati na potrage vozila</a>
+<br />
+<br />

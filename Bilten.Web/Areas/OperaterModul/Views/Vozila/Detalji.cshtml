@@ -1,0 +1,97 @@
+﻿@{
+    ViewData["Title"] = "Detalji";
+    Layout = "~/Views/Shared/_Layout-Operater.cshtml";
+}
+@using Bilten.Web.Areas.OperaterModul.ViewModels.Vozila;
+@model VozilaDetaljiVM
+<br />
+
+<h5>Detalji o vozilu</h5>
+<hr />
+<form style="width:70%">
+    <label><b>Vlasnik automobila:</b></label>
+    <input type="text" class="form-control" name="name" value="@Model.Vlasnik" readonly />
+    <br />
+    <div class="form-group">
+        <div class="form-row">
+            <div class="col-md-6">
+                <label><b>Marka automobila:</b></label>
+                <input type="text" name="name" class="form-control" value="@Model.Marka" readonly />
+                <br />
+            </div>
+            <div class="col-md-6">
+                <label><b>Model automobila:</b></label>
+                <input type="text" class="form-control" name="name" value="@Model.ModelVozila" readonly />
+                <br />
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="form-row">
+            <div class="col-md-6">
+                <label><b>Godina proizvodnje:</b></label>
+                <input type="datetime" name="datumDog" class="form-control" value="@Model.GodinaProizvodnje" readonly />
+                <br />
+            </div>
+            <div class="col-md-6">
+                <label><b>Broj reg. oznake:</b></label>
+                <input type="text" class="form-control" value="@Model.BrojRegistarskeOznake" readonly />
+                <br />
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="form-row">
+            <div class="col-md-6">
+                <label><b>Boja:</b></label>
+                <input type="text" class="form-control" value="@Model.Boja" readonly />
+                <br />
+            </div>
+            <div class="col-md-6">
+                <label><b>Tip vozila:</b></label>
+                <input type="text" class="form-control" value="@Model.TipVozila" readonly />
+                <br />
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="form-row">
+            <div class="col-md-6">
+                <label><b>Gorivo:</b></label>
+                <input type="text" class="form-control" value="@Model.Gorivo" readonly />
+                <br />
+            </div>
+            <div class="col-md-6">
+                <label><b>Kubikaža:</b></label>
+                <input type="text" class="form-control" value="@Model.Kubikaza" readonly />
+                <br />
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="form-row">
+            <div class="col-md-6">
+                <label><b>Snaga (kW):</b></label>
+                <input type="text" class="form-control" value="@Model.kWSnaga" readonly />
+                <br />
+            </div>
+            <div class="col-md-6">
+                <label><b>Snaga (ks):</b></label>
+                <input type="text" class="form-control" value="@Model.ksSnaga" readonly />
+                <br />
+            </div>
+        </div>
+    </div>
+
+    <label><b>Emisioni standard:</b></label>
+    <input type="text" class="form-control" name="name" value="@Model.EmisioniStandard" readonly />
+    <br />
+</form>
+
+<br />
+<hr />
+<a href="/OperaterModul/Vozila/Index"><< vrati na registar vozila</a>
+<br />
+<br />

@@ -1,0 +1,108 @@
+﻿@{
+    ViewData["Title"] = "Uredi";
+    Layout = "~/Views/Shared/_Layout-Operater.cshtml";
+}
+@using Bilten.Web.Areas.OperaterModul.ViewModels.Vozila;
+@model VozilaUrediVM
+@using Microsoft.AspNetCore.Mvc.TagHelpers;
+
+<br />
+<h4><b>Uredi vozilo "</b></h4>
+
+
+<form asp-action="SnimiPromjene" asp-controller="Vozila" enctype="multipart/form-data" style="width:700px;  padding:10px;">
+
+
+    <label><b>Marka vozila:</b></label>
+    <select name="markaId" class="form-control" required placeholder="oda">
+        @foreach (var x in Model.Marka)
+        {
+            <option value="@x.Value">@x.Text</option>
+        }
+    </select>
+    <br /><div class="form-group">
+        <div class="form-row">
+
+            <div class="col-md-6">
+                <label><b>Model vozila:</b></label>
+                <select name="modelId" class="form-control">
+                    @foreach (var x in Model.Model)
+                    {
+                        <option value="@x.Value">@x.Text</option>
+                    }
+                </select>
+                <br />
+            </div>
+            <div class="col-md-6">
+                <label><b>Vlasnik vozila:</b></label>
+                <select name="osobaId" class="form-control">
+                    @foreach (var x in Model.Osoba)
+                    {
+                        <option value="@x.Value">@x.Text</option>
+                    }
+                </select>
+                <br />
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="form-row">
+            <div class="col-md-6">
+                <label><b>Godina proizovdnje</b></label>
+                <input type="date" name="godinaProizvodnje" class="form-control" value="@Model.GodinaProizvodnje" />
+                <br />
+            </div>
+        </div>
+    </div>
+    <label><b>Broj registarske oznake:</b></label>
+    <input type="text" name="brRegOznake" required class="form-control" value="@Model.BrojRegistarskeOznake" />
+    <br />
+
+    <label><b>Boja:</b></label>
+    <input type="text" name="boja" required class="form-control" value="@Model.Boja" />
+    <br />
+
+    <label><b>Tip vozila:</b></label>
+    <input type="text" name="tipVozila" required class="form-control" value=@Model.TipVozila />
+    <br />
+
+    <label><b>Gorivo:</b></label>
+    <input type="text" name="gorivo" required class="form-control" value=@Model.Gorivo />
+    <br />
+
+    <label><b>Kubikaža:</b></label>
+    <input type="text" name="kubikaza" required class="form-control" value="@Model.Kubikaza" />
+    <br />
+
+    <label><b>Snaga (kW):</b></label>
+    <input type="text" name="kWSnaga" required class="form-control" value="@Model.kWSnaga" />
+    <br />
+
+    <label><b>Snaga (ks):</b></label>
+    <input type="text" name="ksSnaga" required class="form-control" value="@Model.ksSnaga" />
+    <br />
+
+    <label><b>Emisioni standard:</b></label>
+    <input type="text" name="emisionStandard" required class="form-control" value="@Model.EmisioniStandard" />
+    <br />
+
+
+    <div id="vozilaSlike" style="display:contents"></div>
+
+    <a href="/OperaterModul/VozilaSlike/Dodaj?=@Model.Id">Dodaj slike</a>
+
+    <br />
+    <input type="submit" class="btn btn-success" value="Snimi" />
+    <a href="/OperaterModul" class="btn btn-danger" style="margin-left:10px;">Odustani</a>
+    <br />
+    <br />
+</form>
+
+<script>
+    $(document).ready(function (parameters) {
+        $.get("/OperaterModul/VozilaSlike/Index?=@Model.Id", function (rezultat, status) {
+          $("#vozilaSlike").html(rezultat);
+        });
+    });
+</script>

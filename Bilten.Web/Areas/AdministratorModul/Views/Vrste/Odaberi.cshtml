@@ -1,0 +1,41 @@
+﻿
+@{
+    ViewData["Title"] = "Odaberi";
+    Layout = "~/Views/Shared/_Layout-Admin.cshtml";
+}
+@using Bilten.Web.Areas.AdministratorModul.ViewModels.Vrste;
+@model VrsteOdaberiVM
+
+<div>
+    <h2 style="display:inline-block">Prikaz svih vrsta za kategoriju "<b>@Model.NazivKategorije</b>"</h2>
+    <a href="/AdministratorModul/Vrste" class="btn btn-primary " style="float:right;margin-right:20px"><i class="fa fa-backward"></i></a>
+
+    <hr />
+</div>
+<table class="table table-hover table-bordered " style="width:50%">
+    <thead>
+        <tr>
+            <th>Naziv</th>
+            <th>Akcija</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var x in Model.Rows)
+        {
+            <tr>
+                <td>@x.Naziv</td>
+                <td style="width:150px">
+                    <a href="/AdministratorModul/Vrste/Uredi?=@x.VrsteId" class="btn-sm btn-warning" style="color:white; margin-right:20px;">Uredi</a>
+                    <a href="/AdministratorModul/Vrste/Obrisi?=@x.VrsteId"><i class="fa fa-fw fa-close fa-1x text-danger"></i></a>
+                </td>
+            </tr>
+        }
+
+    </tbody>
+</table>
+<br />
+<a href="/AdministratorModul/Vrste/Dodaj?=@Model.KategorijeId" class="btn btn-success">Dodaj vrstu</a>
+<br /><br />
+      <hr />
+
+<br />

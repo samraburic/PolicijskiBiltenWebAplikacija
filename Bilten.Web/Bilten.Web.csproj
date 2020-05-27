@@ -1,0 +1,159 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Areas\OperaterModul\Data\**" />
+    <Compile Remove="Areas\OperaterModul\Models\**" />
+    <Compile Remove="wwwroot\Rotativa\**" />
+    <Content Remove="Areas\OperaterModul\Data\**" />
+    <Content Remove="Areas\OperaterModul\Models\**" />
+    <Content Remove="wwwroot\Rotativa\**" />
+    <EmbeddedResource Remove="Areas\OperaterModul\Data\**" />
+    <EmbeddedResource Remove="Areas\OperaterModul\Models\**" />
+    <EmbeddedResource Remove="wwwroot\Rotativa\**" />
+    <None Remove="Areas\OperaterModul\Data\**" />
+    <None Remove="Areas\OperaterModul\Models\**" />
+    <None Remove="wwwroot\Rotativa\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="jQuery" Version="3.4.1" />
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.10" />
+    <PackageReference Include="OpenCvSharp4" Version="4.2.0.20200208" />
+    <PackageReference Include="OpenCvSharp4.runtime.win" Version="4.2.0.20200208" />
+    <PackageReference Include="OpenCvSharp4.Windows" Version="4.2.0.20200208" />
+    <PackageReference Include="PagedList" Version="1.17.0" />
+    <PackageReference Include="PagedList.Mvc" Version="4.5.0" />
+    <PackageReference Include="Rotativa.AspNetCore" Version="1.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Bilten.Data\Bilten.Data.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="Areas\AdministratorModul\Views\Dogadjaj\Lista2.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Areas\KontrolorModul\Views\Dogadjaj\Detalji2.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Areas\KontrolorModul\Views\Home\Index.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Areas\KontrolorModul\Views\_ViewImports.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Areas\KontrolorModul\Views\_ViewStart.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Areas\OperaterModul\Views\Dogadjaj\Detalji2.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Areas\OperaterModul\Views\_ViewImports.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Areas\OperaterModul\Views\_ViewStart.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Autentifikacija\Index.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Areas\AdministratorModul\Views\Home\About.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Areas\AdministratorModul\Views\Home\Contact.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Areas\AdministratorModul\Views\Home\Index.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Areas\AdministratorModul\Views\Home\Privacy.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Areas\AdministratorModul\Views\Kategorije\Dodaj.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Areas\AdministratorModul\Views\Kategorije\Index.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Areas\AdministratorModul\Views\Kategorije\Uredi.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Areas\AdministratorModul\Views\Mjere\Index.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Areas\AdministratorModul\Views\Mjere\Prikazi.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Areas\AdministratorModul\Views\Shared\Error.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Areas\AdministratorModul\Views\Shared\_CookieConsentPartial.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Areas\AdministratorModul\Views\Shared\_Layout.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Areas\AdministratorModul\Views\Shared\_LayoutAnonymous.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Areas\AdministratorModul\Views\Shared\_ValidationScriptsPartial.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Areas\AdministratorModul\Views\Vrste\Dodaj.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Areas\AdministratorModul\Views\Vrste\Index.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Areas\AdministratorModul\Views\Vrste\Odaberi.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Areas\AdministratorModul\Views\Vrste\Uredi.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Areas\AdministratorModul\Views\_ViewImports.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Areas\AdministratorModul\Views\_ViewStart.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Shared\_Layout-Kontrolor.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Shared\_Layout-Operater.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Shared\_Layout-Saobracaj.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="Views\Shared\_LayoutAnonymous.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Areas\KontrolorModul\Views\Dogadjaj\Detalji.cshtml" />
+    <None Include="Areas\KontrolorModul\Views\Dogadjaj\Index.cshtml" />
+    <None Include="Areas\KontrolorModul\Views\Dogadjaj\ZvanicniBilten.cshtml" />
+    <None Include="Areas\KontrolorModul\Views\Home\Index.cshtml" />
+    <None Include="Areas\OperaterModul\Views\DogadjajiMjere\Dodaj.cshtml" />
+    <None Include="Areas\OperaterModul\Views\DogadjajiMjere\Index.cshtml" />
+    <None Include="Areas\OperaterModul\Views\DogadjajiMjere\IndexZaUredi.cshtml" />
+    <None Include="Areas\OperaterModul\Views\Dogadjaj\Detalji.cshtml" />
+    <None Include="Areas\OperaterModul\Views\Dogadjaj\Dodaj.cshtml" />
+    <None Include="Areas\OperaterModul\Views\Dogadjaj\Index.cshtml" />
+    <None Include="Areas\OperaterModul\Views\Dogadjaj\Lista.cshtml" />
+    <None Include="Areas\OperaterModul\Views\Dogadjaj\Lista2.cshtml" />
+    <None Include="Areas\OperaterModul\Views\Dogadjaj\Uredi.cshtml" />
+    <None Include="Areas\OperaterModul\Views\OrgJed\Index.cshtml" />
+    <None Include="Areas\OperaterModul\Views\PodorgJedinice\Index.cshtml" />
+  </ItemGroup>
+
+</Project>

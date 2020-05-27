@@ -1,0 +1,50 @@
+﻿@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout-Operater.cshtml";
+}
+@using Bilten.Web.Areas.OperaterModul.ViewModels.PotrageVozila;
+@model PotrageVozilaIndexVM
+
+    <div>
+        <h4 style="display:inline-block">Potrage vozila</h4>
+        <a href="/OperaterModul/PotrageVozila/Dodaj" class="btn btn-outline-danger " style="float:right;margin-right:20px">Nova potraga</a>
+        <a href="/OperaterModul/Home" class="btn btn-primary " style="float:right;margin-right:20px"><i class="fa fa-home"></i></a>
+
+        <hr />
+    </div>
+
+
+<table class="table table-bordered " style="width:90%; text-align:center">
+    <thead>
+        <tr>
+            <th>Traženo vozilo</th>
+            <th>Datum prijave</th>
+            <th>Prijavitelj</th>
+            <th>Lokacija</th>
+            <th>Aktivna</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var x in Model.Rows)
+        {
+            <tr onclick='location.href="/OperaterModul/PotrageVozila/Detalji?=@x.Id"'>
+                <td>@x.Vozilo</td>
+                <td>@x.DatumPrijave</td>
+                <td>@x.Prijavitelj</td>
+                <td>@x.Lokacija</td>
+                <td>
+                    @if (x.Aktivna == true)
+                    {
+                        <b>Da</b>
+                    }
+                    else
+                    {
+                        <b>Ne</b>
+                    }
+                            </td>
+                <td><a href="/OperaterModul/PotrageVozila/Uredi?=@x.Id" class="btn btn-warning">Uredi</a></td>
+            </tr>
+        }
+    </tbody>
+</table>

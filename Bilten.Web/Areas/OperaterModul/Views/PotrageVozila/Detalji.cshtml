@@ -1,0 +1,86 @@
+﻿@{
+    ViewData["Title"] = "Detalji";
+    Layout = "~/Views/Shared/_Layout-Saobracaj.cshtml";
+}
+@using Bilten.Web.Areas.OperaterModul.ViewModels.PotrageVozila;
+@model PotrageVozilaDetaljiVM
+<br />
+
+<h5>Detalji o pretrazi</h5>
+<hr />
+<form style="width:70%">
+    <label><b>Prijavitelj:</b></label>
+    <input type="text" class="form-control" name="name" value="@Model.Prijavitelj" readonly />
+    <br />
+    <div class="form-group">
+        <div class="form-row">
+            <div class="col-md-6">
+                <label><b>Prijavljeno vozilo:</b></label>
+                <input type="text" name="name" class="form-control" value="@Model.Vozilo" readonly />
+                <br />
+            </div>
+            <div class="col-md-6">
+                <label><b>Broj reg. oznake:</b></label>
+                <input type="text" class="form-control" name="name" value="@Model.BrRegOznake" readonly />
+                <br />
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="form-row">
+            <div class="col-md-6">
+                <label><b>Vlasnik vozila:</b></label>
+                <input type="datetime" class="form-control" value="@Model.Vlasnik" readonly />
+                <br />
+            </div>
+            <div class="col-md-6">
+                <label><b>Opis:</b></label>
+                <input type="text" class="form-control" value="@Model.Opis" readonly />
+                <br />
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="form-row">
+            <div class="col-md-6">
+                <label><b>Datum prijave:</b></label>
+                <input type="text" class="form-control" value="@Model.DatumPrijave" readonly />
+                <br />
+            </div>
+            <div class="col-md-6">
+                <label><b>Lokacija:</b></label>
+                <input type="text" class="form-control" value="@Model.Lokacija" readonly />
+                <br />
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="form-row">
+            <div class="col-md-6">
+                <label><b>Potraga aktivna:</b></label>
+                <input type="text" class="form-control" value="@Model.Aktivna" readonly />
+                <br />
+            </div>
+            <div class="col-md-6">
+                <label><b>Potraga obustavljena:</b></label>
+                <input type="text" class="form-control" value="@Model.Obustavljena" readonly />
+                <br />
+            </div>
+        </div>
+    </div>
+
+
+    <label><b>Napomena:</b></label>
+    <input type="text" class="form-control" name="name" value="@Model.Napomena" readonly />
+    <br />
+
+
+    <div id="vozilaSlike" style="display:contents"></div>
+</form>
+
+<br />
+<hr />
+<a href="/OperaterModul/PotrageVozila/Index"><< vrati na potrage vozila</a>
+<br />
+<br />

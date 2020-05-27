@@ -1,0 +1,96 @@
+﻿
+@{
+    ViewData["Title"] = "Dodaj";
+    Layout = "~/Views/Shared/_Layout-Operater.cshtml";
+}
+@using Bilten.Web.Areas.OperaterModul.ViewModels.Vozila;
+@model VozilaDodajVM
+@using Microsoft.AspNetCore.Mvc.TagHelpers;
+
+<br />
+<h4><b>Dodaj novo vozilo "</b></h4>
+
+
+<form asp-action="Snimi" asp-controller="Vozila" enctype="multipart/form-data" style="width:700px;  padding:10px;">
+
+
+    <label><b>Marka vozila:</b></label>
+    <select name="markaId" class="form-control" required placeholder="oda">
+        @foreach (var x in Model.Marka)
+        {
+            <option value="@x.Value">@x.Text</option>
+        }
+    </select>
+    <br /><div class="form-group">
+        <div class="form-row">
+
+            <div class="col-md-6">
+                <label><b>Model vozila:</b></label>
+                <select name="modelId" class="form-control">
+                    @foreach (var x in Model.Model)
+                    {
+                        <option value="@x.Value">@x.Text</option>
+                    }
+                </select>
+                <br />
+            </div>
+            <div class="col-md-6">
+                <label><b>Vlasnik vozila:</b></label>
+                <select name="osobaId" class="form-control">
+                    @foreach (var x in Model.Osoba)
+                    {
+                        <option value="@x.Value">@x.Text</option>
+                    }
+                </select>
+                <br />
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="form-row">
+            <div class="col-md-6">
+                <label><b>Godina proizovdnje</b></label>
+                <input type="date" name="godinaProizvodnje" class="form-control" />
+                <br />
+            </div>
+        </div>
+    </div>
+    <label><b>Broj registarske oznake:</b></label>
+    <input type="text" name="brRegOznake" required class="form-control" />
+    <br />
+
+    <label><b>Boja:</b></label>
+    <input type="text" name="boja" required class="form-control" />
+    <br />
+
+    <label><b>Tip vozila:</b></label>
+    <input type="text" name="tipVozila" required class="form-control" />
+    <br />
+
+    <label><b>Gorivo:</b></label>
+    <input type="text" name="gorivo" required class="form-control" />
+    <br />
+
+    <label><b>Kubikaža:</b></label>
+    <input type="text" name="kubikaza" required class="form-control" />
+    <br />
+
+    <label><b>Snaga (kW):</b></label>
+    <input type="text" name="kWSnaga" required class="form-control" />
+    <br />
+
+    <label><b>Snaga (ks):</b></label>
+    <input type="text" name="ksSnaga" required class="form-control" />
+    <br />
+
+    <label><b>Emisioni standard:</b></label>
+    <input type="text" name="emisionStandard" required class="form-control" />
+    <br />
+
+    <br />
+    <input type="submit" class="btn btn-success" value="Snimi" />
+    <a href="/OperaterModul" class="btn btn-danger" style="margin-left:10px;">Odustani</a>
+    <br />
+    <br />
+</form>

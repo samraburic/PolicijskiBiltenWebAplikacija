@@ -1,0 +1,43 @@
+﻿@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout-Operater.cshtml";
+}
+@using Bilten.Web.Areas.OperaterModul.ViewModels.PotrageVozila;
+@model PotrageVozilaDodajVM
+
+<h4>Dodaj novu potragu</h4>
+<hr />
+
+<form action="/OperaterModul/PotrageVozila/Snimi" style="width:60%">
+
+    <label><b>Prijavitelj:</b></label>
+    <input type="text" class="form-control" name="prijavitelj" />
+    <br />
+
+    <label><b>Odaberi vozilo:</b></label>
+    <select name="voziloId" class="form-control">
+        @foreach (var x in Model.vozila)
+        {
+            <option value="@x.Value">@x.Text</option>
+        }
+    </select>
+    <br />
+
+    
+    <label><b>Lokacija:</b></label>
+    <input type="text" class="form-control" name="lokacija" />
+    <br />
+
+    <label><b>Datum prijave:</b></label>
+    <input type="date" class="form-control" name="datumprijave"/>
+    <br />
+
+    <br />
+    <label><b>Opis:</b></label>
+    <input type="text" class="form-control" name="opis" />
+    <br />
+    <hr />
+    <input type="submit" class="btn btn-success" value="Snimi"/>
+
+    <br /><br />
+</form>

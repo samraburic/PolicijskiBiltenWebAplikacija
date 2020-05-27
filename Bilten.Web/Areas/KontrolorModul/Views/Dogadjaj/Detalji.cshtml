@@ -1,0 +1,81 @@
+﻿@model Bilten.Data.Models.Dogadjaj
+
+@{
+    Layout = "~/Views/Shared/_Layout-Kontrolor.cshtml";
+    var slikaPath = "~/images/" + (Model.SlikaPath ?? "noimage.jpg");
+}
+
+<div>
+    <h2 style="display:inline-block">Detalji</h2>
+    <a href="/KontrolorModul/Dogadjaj/Index" class="btn btn-primary " style="float:right;margin-right:20px"><i class="fa fa-backward"></i></a>
+
+    <hr />
+</div>
+<form style="width:70%">
+    <label><b>Vrsta događaja:</b></label>
+    <input type="text" class="form-control" name="name" value="@Model.Vrste.Naziv" readonly />
+    <br />
+    <div class="form-group">
+        <div class="form-row">
+            <div class="col-md-6">
+                <label><b>Podorganizaciona jedinica:</b></label>
+                <input type="text" name="name" class="form-control" value="@Model.PodorganizacionaJedinica.Naziv" readonly />
+                <br />
+            </div>
+            <div class="col-md-6">
+                <label><b>Organizaciona jedinica:</b></label>
+                <input type="text" class="form-control" name="name" value="@Model.OrganizacionaJedinica.Naziv" readonly />
+                <br />
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="form-row">
+            <div class="col-md-6">
+                <label><b>Datum događaja:</b></label>
+                <input type="datetime" name="datumDog" class="form-control" value="@Model.DatumDogadjaja" readonly />
+                <br />
+            </div>
+            <div class="col-md-6">
+                <label><b>Datum prijave:</b></label>
+                <input type="datetime" name="datumPrijave" class="form-control" value="@Model.DatumPrijave" readonly />
+                <br />
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="form-row">
+            <div class="col-md-6">
+                <label><b>Mjesto događaja:</b></label>
+                <input type="text" name="mjesto" class="form-control" value="@Model.MjestoDogadjaja" readonly />
+                <br />
+            </div>
+            <div class="col-md-6">
+                <label><b>Prijavitelj:</b></label>
+                <input type="text" name="prijavitelj" class="form-control" value="@Model.Prijavitelj" readonly />
+                <br />
+            </div>
+        </div>
+    </div>
+
+    <label><b>Opis:</b></label>
+    <textarea class="form-control" readonly>@Model.Opis"</textarea>
+    <br />
+    <br />
+
+    <div id="mjereStavke5" style="display:contents"></div>
+    <hr /><label><b>Slika:</b></label>
+    <br />
+    <img src="@slikaPath" alt="no image" asp-append-version="true" style="max-width:100%;box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 15px 0 rgba(0, 0, 0, 0.19); " />
+
+
+</form>
+<br /><br />
+
+<script>
+    $(document).ready(function (parameters) {
+      $.get("/KontrolorModul/DogadjajiMjere/Index?=@Model.Id", function (rezultat, status) {
+          $("#mjereStavke5").html(rezultat);
+        });
+    });
+</script>

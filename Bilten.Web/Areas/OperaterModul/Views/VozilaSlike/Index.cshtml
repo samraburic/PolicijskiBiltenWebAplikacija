@@ -1,0 +1,20 @@
+﻿@model IEnumerable<Bilten.Data.Models.VozilaSlike>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout-Operater.cshtml";
+    //var slikaPath = "~/Vozila/" + (Model.SlikaPath ?? "noimage.jpg");
+}
+
+
+    <form style="width:70%">
+
+        <hr /><label><b>Slike vozila:</b></label>
+        <br />
+        @foreach (var item in Model)
+        {
+            var slikaPath = "~/Vozila/" + (@item.SlikaPath ?? "noimage.jpg");
+            <img src="@slikaPath" alt="no image" asp-append-version="true" style="max-width:100%; box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 15px 0 rgba(0, 0, 0, 0.19);" />
+
+        }
+    </form>

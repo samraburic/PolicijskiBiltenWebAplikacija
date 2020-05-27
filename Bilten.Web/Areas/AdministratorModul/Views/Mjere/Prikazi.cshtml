@@ -1,0 +1,42 @@
+﻿
+@{
+    ViewData["Title"] = "Prikazi";
+    Layout = "~/Views/Shared/_Layout-Admin.cshtml";
+}
+@using Bilten.Web.Areas.AdministratorModul.ViewModels.Mjere;
+@model MjerePrikaziVM
+
+<div>
+    <h2 style="display:inline-block">Prikaz mjera za kategoriju "<b>@Model.NazivKategorije</b>"</h2>
+    <a href="/AdministratorModul/Mjere" class="btn btn-primary" style="float:right;margin-right:20px"><i class="fa fa-backward"></i></a>
+
+    <hr />
+</div>
+<input type="text" name="name" value="@Model.KategorijeId" hidden />
+<table class="table table-hover table-bordered table-condensed" style="width:50%">
+    <thead>
+        <tr>
+            <th>Opis</th>
+            <th>Akcija</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var x in Model.Rows)
+        {
+            <tr>
+                <td>@x.OpisMjere</td>
+                <td>
+                    <a href="/AdministratorModul/Mjere/Uredi?=@x.MjereId" class="btn-sm btn-warning" style="color:white;">Uredi</a>
+                    <a href="/AdministratorModul/Mjere/Obrisi?=@x.MjereId"><i class="fa fa-fw fa-close fa-1x text-danger"></i></a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<br />
+<a href="/AdministratorModul/Mjere/Dodaj?=@Model.KategorijeId" class="btn btn-success">Dodaj</a>
+<br />
+<br />
+<hr />
+<br />
+<br />
